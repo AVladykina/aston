@@ -38,7 +38,7 @@
 }]]></component>
   <component name="RunManager" selected="JUnit.QuickSortTest">
     <configuration name="MyArrayListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="aston_hw_1" />
+      <module name="aston" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyArrayListTest" />
       <option name="TEST_OBJECT" value="class" />
@@ -47,23 +47,10 @@
       </method>
     </configuration>
     <configuration name="QuickSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="aston_hw_1" />
+      <module name="aston" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="QuickSortTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="aston_hw_1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="aston_hw_1" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
