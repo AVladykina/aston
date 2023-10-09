@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7730b931-66eb-42dd-87ba-8a9bf5d33161" name="Changes" comment="" />
+    <list default="true" id="7730b931-66eb-42dd-87ba-8a9bf5d33161" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MyArrayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/QuickSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MyArrayListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/QuickSortTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,18 +83,6 @@
       <option name="presentableId" value="Default" />
       <updated>1696832684493</updated>
     </task>
-    <task id="LOCAL-00001" summary="Task ready">
-      <created>1696833676942</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1696833676942</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Task ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task ready" />
   </component>
 </project>
