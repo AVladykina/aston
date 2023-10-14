@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7730b931-66eb-42dd-87ba-8a9bf5d33161" name="Changes" comment="Needed bugfix.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WeatherApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WeatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyArrayList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/QuickSort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MyArrayListTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/QuickSortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WeatherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WeatherApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/out/currentWeatherData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/currentWeatherData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/out/threeDayForecastData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/threeDayForecastData.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +106,21 @@
       <option name="presentableId" value="Default" />
       <updated>1696832684493</updated>
     </task>
+    <task id="LOCAL-00001" summary="Needed bugfix.">
+      <created>1697124220215</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697124220215</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create directory out for writing data to file">
+      <created>1697124374657</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697124374657</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

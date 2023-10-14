@@ -104,7 +104,7 @@ public class WeatherService {
     }
 
     /**
-     * Отображение данных о текущей погоде в удобочитаемом формате.
+     * Отображение данных о текущей погоде.
      *
      * @param data JSON-данные текущей погоды.
      */
@@ -124,7 +124,7 @@ public class WeatherService {
     }
 
     /**
-     * Отображение погодного прогноза на весь день по часам в удобочитаемом формате.
+     * Отображение погодного прогноза на весь день.
      *
      * @param data JSON-данные прогноза на весь день по часам.
      */
@@ -145,7 +145,7 @@ public class WeatherService {
     }
 
     /**
-     * Отображение погодного прогноза на три дня в удобочитаемом формате.
+     * Отображение погодного прогноза на три дня.
      *
      * @param data JSON-данные прогноза на три дня.
      */
@@ -172,7 +172,7 @@ public class WeatherService {
     }
 
     /**
-     * Запись данных о текущей погоде в файл в удобочитаемом формате.
+     * Запись данных о текущей погоде в файл.
      *
      * @param fileName Имя файла для записи данных.
      * @param data     JSON-данные текущей погоды.
@@ -194,7 +194,7 @@ public class WeatherService {
     }
 
     /**
-     * Запись данных о погодном прогнозе на три дня в файл в удобочитаемом формате.
+     * Запись данных о погодном прогнозе на три дня в файл.
      *
      * @param fileName Имя файла для записи данных.
      * @param data     JSON-данные прогноза на три дня.
@@ -205,7 +205,7 @@ public class WeatherService {
             for (Object item : list) {
                 JSONObject dayData = (JSONObject) item;
                 JSONObject mainData = (JSONObject) dayData.get("main");
-                long temperatureInKelvin = (long) mainData.get("temp");
+                long temperatureInKelvin = ((Double) mainData.get("temp")).longValue();
 
                 // Конвертация из Кельвинов в Цельсии
                 long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
@@ -215,6 +215,35 @@ public class WeatherService {
                 writer.write("Влажность: " + mainData.get("humidity") + "%\n");
                 writer.write("Скорость ветра: " + ((JSONObject) dayData.get("wind")).get("speed") + "м/с\n");
                 writer.write("\n"); // Разделяем записи для каждого дня
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Ошибка при записи данных в файл: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Запись данных о погодном прогнозе на весь день по часам.
+     *
+     * @param fileName Имя файла для записи данных.
+     * @param data     JSON-данные прогноза на три дня.
+     */
+    public void writeHourlyForecastToFile(String fileName, JSONObject data) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            JSONArray list = (JSONArray) data.get("list");
+            for (Object item : list) {
+                JSONObject hourData = (JSONObject) item;
+                JSONObject mainData = (JSONObject) hourData.get("main");
+                long temperatureInKelvin = ((Double) mainData.get("temp")).longValue();
+
+                // Конвертация из Кельвинов в Цельсии
+                long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
+
+                writer.write("Время: " + hourData.get("dt_txt") + "\n");
+                writer.write("Температура: " + temperatureInCelsius + "°C\n");
+                writer.write("Влажность: " + mainData.get("humidity") + "%\n");
+                writer.write("Скорость ветра: " + ((JSONObject) hourData.get("wind")).get("speed") + "м/с\n");
+                writer.write("\n"); // Разделяем записи для каждого часа
             }
         } catch (IOException e) {
             e.printStackTrace();

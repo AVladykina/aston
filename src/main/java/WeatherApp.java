@@ -1,10 +1,11 @@
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class WeatherApp {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         WeatherService ws = new WeatherService();
 
@@ -14,8 +15,10 @@ public class WeatherApp {
 
         String city = "London,uk";
 
+        JSONParser parser = new JSONParser();
+
         // Получение текущей погоды
-        JSONObject currentWeatherData = (JSONObject) JSONValue.parse(ws.getCurrentWeather(city, Settings.valueOf("BASE_URL").toString(), Settings.valueOf("API_KEY").toString()));
+        JSONObject currentWeatherData = (JSONObject) parser.parse(ws.getCurrentWeather(city, Settings.valueOf("BASE_URL").toString(), Settings.valueOf("API_KEY").toString()));
         System.out.println("Текущая погода:");
         ws.displayWeather(new JSONObject(currentWeatherData));
 
@@ -23,17 +26,19 @@ public class WeatherApp {
         ws.writeDisplayWeatherToFile(currentWeatherFilePath, new JSONObject(currentWeatherData));
 
         // Получение прогноза на три дня
-        JSONObject threeDayForecastData = (JSONObject) JSONValue.parse(ws.getThreeDayForecast(city, Settings.valueOf("BASE_URL").toString(), Settings.valueOf("API_KEY").toString()));
+        JSONObject threeDayForecastData = (JSONObject) parser.parse(ws.getThreeDayForecast(city, Settings.valueOf("BASE_URL").toString(), Settings.valueOf("API_KEY").toString()));
         System.out.println("\nПрогноз на три дня:");
         ws.displayThreeDayForecast(threeDayForecastData);
 
         // Запись данных о прогнозе погоды на три дня в файл
-        //ws.writeThreeDayForecastToFile(threeDayForecastFilePath, new JSONObject(threeDayForecastData));
-
+        ws.writeThreeDayForecastToFile(threeDayForecastFilePath, new JSONObject(threeDayForecastData));
 
         // Получение прогноза на весь день по часам
-        JSONObject hourlyForecastData = (JSONObject) JSONValue.parse(ws.getHourlyForecast(city, Settings.valueOf("BASE_URL").toString(), Settings.valueOf("API_KEY_SECOND").toString()));
+        JSONObject hourlyForecastData = (JSONObject) parser.parse(ws.getHourlyForecast(city, Settings.valueOf("BASE_URL").toString(), Settings.valueOf("API_KEY_SECOND").toString()));
         System.out.println("\nПогода на весь день по часам:");
         ws.displayHourlyForecast(hourlyForecastData);
+
+        // Запись данных о прогнозе погоды на весь день по часам в файл
+        ws.writeHourlyForecastToFile(hourlyForecastFilePath, new JSONObject(hourlyForecastData));
     }
 }
