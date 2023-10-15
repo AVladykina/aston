@@ -6,7 +6,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Класс для работы с погодными данными.
+ * Класс {@code WeatherService} отвечает за работу с данными о погоде.
+ * Он предоставляет методы для получения информации о погоде, её обработки и вывода или сохранения данных.
  */
 public class WeatherService {
 

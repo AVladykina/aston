@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7730b931-66eb-42dd-87ba-8a9bf5d33161" name="Changes" comment="Needed bugfix.">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SettingsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/WeatherAppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/WeatherServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WeatherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WeatherApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WeatherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/out/currentWeatherData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/currentWeatherData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/out/hourlyForecastData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/hourlyForecastData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/out/threeDayForecastData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/threeDayForecastData.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,17 +47,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
-  <component name="RunManager" selected="Application.WeatherApp">
+}]]></component>
+  <component name="RunManager" selected="JUnit.WeatherServiceTest">
     <configuration name="WeatherApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WeatherApp" />
       <module name="aston" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in aston" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -74,6 +89,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WeatherServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WeatherServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="aston_hw_1" />
       <method v="2">
@@ -89,9 +113,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WeatherServiceTest" />
+        <item itemvalue="JUnit.All in aston" />
         <item itemvalue="Application.WeatherApp" />
-        <item itemvalue="JUnit.QuickSortTest" />
-        <item itemvalue="JUnit.MyArrayListTest" />
         <item itemvalue="JUnit.QuickSortTest" />
         <item itemvalue="JUnit.MyArrayListTest" />
       </list>
@@ -120,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697124374657</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added README file.">
+      <created>1697397752302</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697397752302</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,7 +194,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Needed bugfix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Needed bugfix." />
+    <MESSAGE value="Added README file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added README file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -176,6 +208,25 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="7" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/WeatherService.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/WeatherServiceTest.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/WeatherService.java</url>
+          <line>111</line>
+          <properties class="WeatherService" method="displayWeather">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

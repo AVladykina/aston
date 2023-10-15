@@ -4,6 +4,12 @@ import org.json.simple.parser.ParseException;
 
 public class WeatherApp {
 
+    /**
+     * Главный метод приложения Weather App.
+     *
+     * @param args Аргументы командной строки (не используются).
+     * @throws ParseException Бросается в случае проблем с разбором данных в формате JSON.
+     */
 
     public static void main(String[] args) throws ParseException {
 
