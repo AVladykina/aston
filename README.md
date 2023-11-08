@@ -5,44 +5,30 @@ This README provides an overview and explanation of the projects in Aston's Java
 
 ## Contents
 1. [Branches](#branches)
-2. [Prerequisites](#prerequisites)
+2. 
    
 ## Branches
 1. [aston_hw_1](https://github.com/AVladykina/aston/tree/aston_hw_1)
 2. [aston_hw_2](https://github.com/AVladykina/aston/tree/aston_hw_2)
+3. [aston_hw_3](https://github.com/AVladykina/aston/tree/aston_hw_3)
+4. [aston_hw_4](https://github.com/AVladykina/aston/tree/aston_hw_4)
 
-## Branch aston_hw_1
-### Overview for aston_hw_1
-Task conditions:
-* Implement your own ArrayList (not thread-safe). [Link to
-description of the data structure](https://habr.com/en/articles/128269/)
-* Implement the quicksort algorithm for your
-implementation of ArrayList. [Link to an excellent description of how it works
-algorithm.](https://www.youtube.com/watch?v=4s-aG6yGGLU) Your QuickSort should take an ArrayList of any
-type and sort it. Use:
-  - Java generics
-  - Comparable, Comparator
-* Document the code. [What, why, and how](https://www.baeldung.com/javadoc)
-  - All classes and interfaces must be documented at the class-level (class-level javadoc)
-  - All public methods in your implementations shouldcontain javadoc
-  - Documentation should be complete and provide a comprehensive and intuitive guide to using your code for another developer
-* Cover the code with unit tests (use junit 5).
-
-### Project Structure aston_hw_1
-
-The project consists of several Java classes organized as follows:
-* `MyArrayList`: Classes representing to implementation my own ArrayList.
-* `QuickSort`: Implementation of the QuickSort algorithm for MyArrayList.
-* `Main`: The main application class responsible for launching the application.
-
-### How to Use aston_hw_1
-
-To use the aston_hw_1, follow these steps:
-1. To run the application, execute the main method located in the Main class.
-
-## Branch aston_hw_2
-### Overview for aston_hw_2
-
-### Prerequisites
-To run this application, you need to have the following prerequisites installed on your system:
-Java Development Kit (JDK): The application is written in Java, so you need to have a Java development environment installed.
+## Tasks
+1. Реализовать свой ArrayList. Реализоватьалгоритмquicksortдляреализованнойвами реализации ArrayList.
+2. Реализовать программу для получения прогноза погоды через REST запрос.
+   * Ваша программа должна получить данные о погоде, у стороннего сервиса, обработать их и вывести в удобочитаемом виде.
+   * Доп задача: Погода должна выводиться в трёх вариантах (на момент времени запроса, на весь день по часам, на три дня)
+   * Для запроса информации можно использовать любые открытые api.
+3. Подключить базу данных к REST приложению.
+   * Создать базу данных городов. Где для каждого города будет сохраняться погода. Все результаты вызова сервиса погоды сохранять в таблицу.
+   * Должна быть таблица минимум по пяти городам. Для каждого города сохранены данные о температуре, облачности, количеству осадков.
+   * Реализовать чтение из базы, чтобы формировать анализ данных погоды.
+4. Реализовать многопользовательское приложение (2 и более пользователей могут изменять данные в вашем приложении)
+   * Приложение должно обладать функционлом создания, изменения, удаления пользователей
+   * Хранить данные о том по какому городу, пользователь запрашивал погоду последний раз когда пользователь входит в систему выдавать ему погоду по этому городу
+   * В вашем приложении всё также должна хранится база данных о запросах погоды пользователем
+   * Вы должны реализовать не менее 3 таблиц в 3 нормальной форме
+   * У каждого пользователя история подзапросов
+   * Создать связь между двумя таблицами many to many
+   * Доп. задание. Реализовать транзакционный процесс, в котором  метод выполняет две и более операций записи в бд в рамках транзакции
+   * Реализуйте авторизацию пользователя
