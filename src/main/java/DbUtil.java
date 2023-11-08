@@ -10,6 +10,7 @@ public class DbUtil {
     /**
      * Производится выполнение DDL (Data Definition Language) запроса, переданного в виде строки ddl.
      * Этот метод открывает соединение с базой данных, создает Statement и выполняет переданный DDL-запрос.
+     *
      * @param ddl
      * @param dataSource
      * @throws SQLException
@@ -26,6 +27,7 @@ public class DbUtil {
      * интерфейса javax.sql.DataSource для PostgreSQL.
      * Затем в этом методе устанавливаются параметры для подключения к базе данных, такие как имя сервера,
      * имя пользователя, пароль, название базы данных и номер порта.
+     *
      * @return
      * @throws SQLException
      */

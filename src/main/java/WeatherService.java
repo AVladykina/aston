@@ -22,7 +22,7 @@ public class WeatherService {
     public String getCurrentWeather(String city, String baseUrl, String apiKey) {
         try {
             String endpoint = "/weather";
-            URL url = new URL(baseUrl + endpoint + "?q=" + city + "&appid=" + apiKey);
+            URL url = new URL(baseUrl + endpoint + "?q=" + city + "&appid=" + apiKey + "&units=metric");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
@@ -53,7 +53,7 @@ public class WeatherService {
     public String getHourlyForecast(String city, String baseUrl, String apiKey) {
         try {
             String endpoint = "/forecast";
-            URL url = new URL(baseUrl + endpoint + "?q=" + city + "&appid=" + apiKey);
+            URL url = new URL(baseUrl + endpoint + "?q=" + city + "&appid=" + apiKey + "&units=metric");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
@@ -84,10 +84,9 @@ public class WeatherService {
     public String getThreeDayForecast(String city, String baseUrl, String apiKey) {
         try {
             String endpoint = "/forecast";
-            URL url = new URL(baseUrl + endpoint + "?q=" + city + "&appid=" + apiKey);
+            URL url = new URL(baseUrl + endpoint + "?q=" + city + "&appid=" + apiKey + "&units=metric");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String line;
             StringBuilder response = new StringBuilder();
@@ -112,13 +111,9 @@ public class WeatherService {
     public void displayWeather(JSONObject data) {
         // Вывод погоды в удобочитаемом формате
         JSONObject mainData = (JSONObject) data.get("main");
-        double temperatureInKelvin = (double) mainData.get("temp");
-
-        // Конвертация из Кельвинов в Цельсии
-        long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
-
+        long temperature = ((Double) mainData.get("temp")).longValue();
         System.out.println("Погода в городе: " + data.get("name"));
-        System.out.println("Температура: " + temperatureInCelsius + "°C");
+        System.out.println("Температура: " + temperature + "°C");
         System.out.println("Влажность: " + (mainData.get("humidity") + "%"));
         System.out.println("Скорость ветра: " + ((JSONObject) data.get("wind")).get("speed") + "м/с");
 
@@ -135,13 +130,9 @@ public class WeatherService {
         for (Object item : list) {
             JSONObject hourData = (JSONObject) item;
             JSONObject mainData = (JSONObject) hourData.get("main");
-            double temperatureInKelvin = (double) mainData.get("temp");
-
-            // Конвертация из Кельвинов в Цельсии
-            long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
-
+            double temperature = ((Double) mainData.get("temp")).doubleValue();
             System.out.println("Время: " + hourData.get("dt_txt") + ", Температура: " +
-                    temperatureInCelsius + "°C");
+                    temperature + "°C");
         }
     }
 
@@ -157,17 +148,13 @@ public class WeatherService {
             JSONObject dayData = (JSONObject) item;
             JSONObject mainData = (JSONObject) dayData.get("main");
             try {
-                long temperatureInKelvin = (long) mainData.get("temp");
-                // Конвертация из Кельвинов в Цельсии
-                long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
+                long temperature = (long) mainData.get("temp");
                 System.out.println("Дата: " + dayData.get("dt_txt") + ", Температура: " +
-                        temperatureInCelsius + "°C");
+                        temperature + "°C");
             } catch (ClassCastException e) {
-                double temperatureInKelvin = (double) mainData.get("temp");
-                // Конвертация из Кельвинов в Цельсии
-                long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
+                double temperature = (double) mainData.get("temp");
                 System.out.println("Дата: " + dayData.get("dt_txt") + ", Температура: " +
-                        temperatureInCelsius + "°C");
+                        temperature + "°C");
             }
         }
     }
@@ -181,11 +168,9 @@ public class WeatherService {
     public void writeDisplayWeatherToFile(String fileName, JSONObject data) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             JSONObject mainData = (JSONObject) data.get("main");
-            double temperatureInKelvin = ((double) mainData.get("temp"));
-            long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
-
+            double temperature = ((double) mainData.get("temp"));
             writer.write("Погода в городе: " + data.get("name") + "\n");
-            writer.write("Температура: " + temperatureInCelsius + "°C\n");
+            writer.write("Температура: " + temperature + "°C\n");
             writer.write("Влажность: " + mainData.get("humidity") + "%\n");
             writer.write("Скорость ветра: " + ((JSONObject) data.get("wind")).get("speed") + "м/с\n");
         } catch (IOException e) {
@@ -206,13 +191,9 @@ public class WeatherService {
             for (Object item : list) {
                 JSONObject dayData = (JSONObject) item;
                 JSONObject mainData = (JSONObject) dayData.get("main");
-                long temperatureInKelvin = ((Double) mainData.get("temp")).longValue();
-
-                // Конвертация из Кельвинов в Цельсии
-                long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
-
+                long temperature = ((Double) mainData.get("temp")).longValue();
                 writer.write("Дата: " + dayData.get("dt_txt") + "\n");
-                writer.write("Температура: " + temperatureInCelsius + "°C\n");
+                writer.write("Температура: " + temperature + "°C\n");
                 writer.write("Влажность: " + mainData.get("humidity") + "%\n");
                 writer.write("Скорость ветра: " + ((JSONObject) dayData.get("wind")).get("speed") + "м/с\n");
                 writer.write("\n"); // Разделяем записи для каждого дня
@@ -235,13 +216,9 @@ public class WeatherService {
             for (Object item : list) {
                 JSONObject hourData = (JSONObject) item;
                 JSONObject mainData = (JSONObject) hourData.get("main");
-                long temperatureInKelvin = ((Double) mainData.get("temp")).longValue();
-
-                // Конвертация из Кельвинов в Цельсии
-                long temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
-
+                long temperature = ((Double) mainData.get("temp")).longValue();
                 writer.write("Время: " + hourData.get("dt_txt") + "\n");
-                writer.write("Температура: " + temperatureInCelsius + "°C\n");
+                writer.write("Температура: " + temperature + "°C\n");
                 writer.write("Влажность: " + mainData.get("humidity") + "%\n");
                 writer.write("Скорость ветра: " + ((JSONObject) hourData.get("wind")).get("speed") + "м/с\n");
                 writer.write("\n"); // Разделяем записи для каждого часа
@@ -250,5 +227,7 @@ public class WeatherService {
             e.printStackTrace();
             System.err.println("Ошибка при записи данных в файл: " + e.getMessage());
         }
+
+
     }
 }

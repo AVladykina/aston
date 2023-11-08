@@ -10,9 +10,11 @@ public enum Settings {
     BASE_URL_HOURLY("https://pro.openweathermap.org/data/2.5");
 
     private String value;
+
     Settings(String value) {
         this.value = value;
     }
+
     public String toString() {
         return value;
     }

@@ -5,19 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7730b931-66eb-42dd-87ba-8a9bf5d33161" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DbService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DbUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WeatherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/city.list.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DbServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WeatherApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyArrayList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/QuickSort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MyArrayListTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/QuickSortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DbUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DbUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WeatherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WeatherApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/city.list.json" beforeDir="false" afterPath="$PROJECT_DIR$/cityList.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WeatherApp">
+  <component name="RunManager" selected="JUnit.DbServiceTest">
     <configuration name="WeatherApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WeatherApp" />
       <module name="aston" />
@@ -68,20 +68,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyArrayListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="aston_hw_1" />
+    <configuration name="DbServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyArrayListTest" />
+      <option name="MAIN_CLASS_NAME" value="DbServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="aston_hw_1" />
+    <configuration name="DbServiceTest.testCreateThreeDayForecastTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="QuickSortTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="DbServiceTest" />
+      <option name="METHOD_NAME" value="testCreateThreeDayForecastTable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DbServiceTest.testSaveCitiesToDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DbServiceTest" />
+      <option name="METHOD_NAME" value="testSaveCitiesToDatabase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DbServiceTest.testSaveThreeDayForecastToDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DbServiceTest" />
+      <option name="METHOD_NAME" value="testSaveThreeDayForecastToDatabase" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -101,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DbServiceTest" />
+        <item itemvalue="JUnit.DbServiceTest.testSaveCitiesToDatabase" />
+        <item itemvalue="JUnit.DbServiceTest.testSaveThreeDayForecastToDatabase" />
+        <item itemvalue="JUnit.DbServiceTest.testCreateThreeDayForecastTable" />
         <item itemvalue="Application.WeatherApp" />
-        <item itemvalue="JUnit.QuickSortTest" />
-        <item itemvalue="JUnit.MyArrayListTest" />
-        <item itemvalue="JUnit.QuickSortTest" />
-        <item itemvalue="JUnit.MyArrayListTest" />
       </list>
     </recent_temporary>
   </component>
@@ -118,6 +139,14 @@
       <option name="presentableId" value="Default" />
       <updated>1696832684493</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create connection to DB">
+      <created>1697431072604</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697431072604</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,5 +159,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create connection to DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create connection to DB" />
   </component>
 </project>

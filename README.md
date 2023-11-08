@@ -1,26 +1,52 @@
                      # Branch aston_hw_2
 ## Overview for aston_hw_3
-Task conditions:
-*  Connect a database to the REST application. Create a database of cities where weather data is stored for each city. Save all weather service call results to the table.
- There should be a table for a minimum of five cities. For each city, data about temperature, cloudiness, and precipitation should be saved.
+# Описание кода
 
-* Implement reading from the database to analyze weather data.
+Этот код представляет собой пример приложения `WeatherApp`, которое позволяет получать данные о погоде и сохранять их в файлы и базу данных.
 
-## WeatherApp
+## Использование
 
+### Главный метод `main`
 
+Главный метод `main` приложения `WeatherApp` выполняет следующие действия:
 
-## Project Structure WeatherApp
+1. Получение текущей погоды для города Лондон и вывод её на экран.
+2. Запись данных о текущей погоде в файл.
+3. Получение прогноза на три дня для города Лондон и вывод его на экран.
+4. Запись данных о прогнозе на три дня в файл.
+5. Получение погодного прогноза на весь день по часам для города Лондон и вывод его на экран.
+6. Запись данных о прогнозе погоды на весь день по часам в файл.
+7. Инициализация базы данных и создание таблицы "cities".
+8. Загрузка данных из JSON-файла "cityList.json" и сохранение их в таблицу "cities".
+9. Создание таблицы "ThreeDayForecast" в базе данных.
+10. Получение погодного прогноза на три дня для нескольких городов и сохранение его в базе данных.
 
-The project consists of several Java classes organized as follows:
-*
+### Класс `WeatherService`
 
-##Dependencies
+`WeatherService` предоставляет методы для получения данных о погоде и их обработки. Он включает в себя следующие методы:
 
-The app uses the org.json.simple library for parsing JSON data. Ensure that you have this library in your project's dependencies.
+- `getCurrentWeather(city, baseUrl, apiKey)`: Получение текущей погоды для указанного города.
+- `getThreeDayForecast(city, baseUrl, apiKey)`: Получение погодного прогноза на три дня для указанного города.
+- `getHourlyForecast(city, baseUrl, apiKey)`: Получение погодного прогноза на весь день по часам для указанного города.
+- `displayWeather(data)`: Отображение данных о текущей погоде.
+- `displayThreeDayForecast(data)`: Отображение погодного прогноза на три дня.
+- `displayHourlyForecast(data)`: Отображение погодного прогноза на весь день по часам.
+- `writeDisplayWeatherToFile(fileName, data)`: Запись данных о текущей погоде в файл.
+- `writeThreeDayForecastToFile(fileName, data)`: Запись данных о погодном прогнозе на три дня в файл.
+- `writeHourlyForecastToFile(fileName, data)`: Запись данных о погодном прогнозе на весь день по часам в файл.
 
-## How to Use WeatherApp
+### Класс `DbUtil`
 
-To use the WeatherApp, follow these steps:
-1. To run the Weather App, make sure you have the necessary API keys and configure the file paths for saving the weather data. You can customize the city for which you want to retrieve weather information by modifying the city variable in the WeatherApp class.
-2. To run the application, execute the main method located in the `WeatherApp` class.
+`DbUtil` предоставляет методы для работы с базой данных. Он включает в себя следующие методы:
+
+- `applyDdl(ddl, dataSource)`: Выполнение DDL (Data Definition Language) запроса для базы данных.
+- `buildDataSource()`: Создание объекта `DataSource` для подключения к базе данных.
+
+## Инструкции по использованию
+
+1. Убедитесь, что у вас установлены необходимые библиотеки, такие как `gson`, `json-simple`, и `postgresql`.
+2. Замените значения `currentWeatherFilePath`, `threeDayForecastFilePath`, и `hourlyForecastFilePath` на пути к вашим файлам.
+3. Замените значения `cityLondon`, `cityAmsterdam`, `cityParis`, `cityNewYork`, и `cityBarcelona` на города, для которых вы хотите получить погоду.
+4. Укажите свои настройки `BASE_URL` и `API_KEY` в соответствии с вашими данными API погоды.
+5. Запустите приложение `WeatherApp`, чтобы получить и сохранить данные о погоде.
+
